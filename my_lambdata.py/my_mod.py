@@ -1,22 +1,28 @@
-from sklearn.metrics import plot_confusion_matrix
-
 #Dataframe nulls
 
-df.isnull()
+int main()
 
-#print report
+{
+    int*ptr = NULL;
 
-import pandas_profiling
-df.profile_reporte()
+    print(The value of ptr is %u",ptr);
 
-#Report Confusion Matrix:
+    return 0;
 
-# Check scikit-learn version
-import sklearn
-sklearn.__version__
+}
 
-y_true = [1, 0, 1, 2, 0, 1]
-y_pred = [0, 1, 2, 1, 0, 0]
-confusion_matrix(y_true, y_pred)
+#Report Confusion Matrix
+# script for confusion matrix creation. 
+from sklearn.metrics import confusion_matrix 
+from sklearn.metrics import accuracy_score 
+from sklearn.metrics import classification_report 
 
-plot_confusion_matrix(pipeline, y_true, y_pred, values_format='.0f', xticks_rotation='vertical');
+actual = [11, 12, 0, 17, 0, 10, 17, 0, 0, 20] 
+predicted = [21, 0, 0, 10, 0, 0, 51, 1, 41, 10] 
+results = confusion_matrix(actual, predicted)
+
+print 'Confusion Matrix :'
+print(results) 
+print 'Accuracy Score :',accuracy_score(actual, predicted) 
+print 'Report : '
+print classification_report(actual, predicted) 
