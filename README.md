@@ -2,7 +2,7 @@
 
 # Installation
 
-Instruccion:
+Instructions:
 
 Todo
 
