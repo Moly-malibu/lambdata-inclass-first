@@ -1,6 +1,6 @@
 import unittest
 
-from my_lambdata.my_mod import enlarge
+from my_mod import enlarge
 
 
 class TestStringMethods(unittest.TestCase):
