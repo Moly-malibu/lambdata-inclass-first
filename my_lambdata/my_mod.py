@@ -1,24 +1,42 @@
-#Dataframe for nulls
+# Null
 
-if null_variable is None:
-    print('null_variable is None')
+value = None
+if value is None:
+    print('The value is null')
 else:
-    print('null_variable is not None')
-if not_null_variable is None:
-    print('not_null_variable is None')
-else:
-    print('not_null_variable is not None')
+    print('The value is not null')
+try:
+    val
+except NameError:
+    pass
 
-#Report Confusion Matrix
-# script for confusion matrix creation. 
-from sklearn.metrics import confusion_matrix 
-from sklearn.metrics import accuracy_score 
-from sklearn.metrics import classification_report 
+# Report confusion matrix
+def precision (label, confusion_matrix):
+    col = confusion_matrix[:, label]
+    return confusion_matrix[label, label]/ col.sum()
 
-def report(actual, predicted):
-    results = confusion_matrix(actual, predicted)
-    print 'Confusion Matrix :'
-    print(results) 
-    print 'Accuracy Score :',accuracy_score(actual, predicted) 
-    print 'Report : '
-    print classification_report(actual, predicted)
+def recall(label, confusion_matrix):
+    row = confusion_matrix[label, :]
+    return confusion_matrix[label, label] / row.sum()
+
+def precision_macro_average(confusion_matrix):
+    rows, columns = confusion_matrix.shape
+    sum_of_precisions = 0
+    for label in range(rows):
+        sum_of_precisions += precision(label, confusion_matrix)
+    return sum_of_precisions/rows
+
+def recall_macro_average(confusion_matrix):
+    rows, columns = confusion_matrix.shape
+    sum_of_recalls = 0
+    for label in range(columns):
+        sum_of_recalls += recall(label, confusion_matrix)
+    return sum_of_recalls / columns
+
+print("label precision recall")
+print("precision total:")
+
+def accurancy(confusion_matrix):
+    diagonal_sum = confusion_matrix.trace()
+    sum_of_all_elements = confusion_matrix.sum()
+    return diagonal_sum / sum_of_all_elements

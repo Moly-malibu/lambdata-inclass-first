@@ -1,52 +1,52 @@
-#Python program Inheritance
-#Class Person
+# Python program Inheritance
+# Class Person
 
-class person(object):
+class Person():
 
-    #constructor
+    # constructor
     def __init__(self, name):
-        self,name = name
+        self.name = name
 
-    #To get name
+    # To get name
     def getName(self):
         return self.name
     
-    #To check if this person is employee
+    # To check if this person is employee
     def isEmployee(self):
         return False
 
-#Inherited or sub class(person in bracket)
-class employee(person):
+# Inherited or sub class(person in bracket)
+class Employee(Person):
 
-    #Here we return true
+    # Here we return true
     def isEmployee(self):
         return True
 
-#Driver code
+# Driver code
 # An Object of Person 
-emp = Person("Geek1")   
+emp = Person("Geek1")
 print(emp.getName(), emp.isEmployee())
 
-#An Object of Employee
-emp = employee("Geek2")  
+# An Object of Employee
+emp = Employee("Geek2")  
 print(emp.getName(), emp.isEmployee())
 
-#To Check Class and subclass
+# To Check Class and subclass
 class Base(object):
-    pass #Empty Class
+    pass # Empty Class
 
 class Derived(Base): 
-    pass #Empty Class
+    pass # Empty Class
 
-#Driver Code
+# Driver Code
 print(issubclass(Derived, Base))
 print(issubclass(Base, Derived))
 
 d=Derived()
 b=Base()
 
-#b is not an instance of Derived
+# b is not an instance of Derived
 print(isinstance(d,Base))
 
-#But d is an instance of base
+# But d is an instance of base
 print(isinstance(d, Base))
