@@ -2,7 +2,7 @@
 
 # Installation
 
-Instructions: This package develops in a simple way how to calculate dividends for shareholders, more exactly the present value of the shares.
+About: This package develops in a simple way how to calculate dividends for shareholders, more exactly the present value of the shares.
 
 Todo:
 Gordon Growth Model is P= D1/r-g. 
