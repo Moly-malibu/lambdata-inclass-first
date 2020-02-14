@@ -10,7 +10,7 @@ def enlarge(n):
        n(numeric) some number to be enlarged
 
     """
-    return n*100
+    return n * 100
 
 if __name__=="__main__":
 
